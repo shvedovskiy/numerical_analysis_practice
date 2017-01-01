@@ -131,13 +131,13 @@ public class Matrix {
     public double determinantOfTriangleMatrix() {
         determinant = 1;
         for (int i = 0; i != n; ++i) {
-            if (arr[i][i] == 0) {
+            if (Math.abs(arr[i][i]) < EPS) {
                 return determinant = 0;
             } else {
                 determinant *= arr[i][i];
             }
         }
-        return Math.round(determinant);
+        return determinant;
     }
     public int rankOfTriangleMatrix() {
         int res;
